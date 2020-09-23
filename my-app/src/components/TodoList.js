@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import TodoTable from "./TodoCard/Todo";
+import Todo from "./TodoCard/Todo";
 
 function TodoList({ todolist }) {
   const [renderTodoList, setRenderTodoList] = useState(todolist);
@@ -14,7 +14,7 @@ function TodoList({ todolist }) {
         {renderTodoList &&
           renderTodoList.map((item, index) => (
             <div key={index} className="col-sm-4 mb-3">
-              <TodoTable todoName={item} />
+              <Todo item={item} />
             </div>
           ))}
       </div>

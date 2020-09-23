@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 function AddTodo({ handleAddTodo }) {
   const [inputTodoName, setInputTodoName] = useState("");
+
   let createTodo = (inputTodoName) => {
     handleAddTodo(inputTodoName);
     setInputTodoName("");
