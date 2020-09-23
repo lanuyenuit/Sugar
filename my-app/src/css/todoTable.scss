@@ -1,6 +1,14 @@
 .title-table {
   background-color: #007bff;
   color: #ffffff;
+  .titleTodoName {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    &:focus {
+      background-color: pink;
+    }
+  }
   .title-icon {
     margin-left: auto;
   }
