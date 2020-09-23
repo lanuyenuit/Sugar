@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import "../css/todoTable.scss";
-function TodoTable(props) {
+import "../../css/todoTable.scss";
+import TodoListDetail from "./TodoListDetail";
+
+function Todo(props) {
   const [isAddTodoDetail, setIsAddTodoDetail] = useState(false);
   const [todoNameDetail, setTodoNameDetail] = useState("");
   const [todoNameListDetail, setTodoNameListDetail] = useState([]);
@@ -39,10 +41,10 @@ function TodoTable(props) {
             onChange={(e) => setTodoNameDetail(e.target.value)}
           />
         )}
-        <div>{todoNameListDetail}</div>
+        <TodoListDetail todoNameListDetail={todoNameListDetail} />
       </div>
     </div>
   );
 }
 
-export default TodoTable;
+export default Todo;
