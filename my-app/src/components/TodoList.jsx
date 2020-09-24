@@ -12,11 +12,11 @@ function TodoList({ todolist, updateTitle, deleteTodo }) {
     <div>
       <div className="row">
         {renderTodoList &&
-          renderTodoList.map((item, index) => {
+          renderTodoList.map((_, index) => {
             return (
-              <div key={item} className="col-sm-4 mb-3">
+              <div key={`${index + 1}-${_}`} className="col-sm-4 mb-3">
                 <Todo
-                  item={item}
+                  item={_}
                   index={index}
                   updateTitle={updateTitle}
                   deleteTodo={deleteTodo}

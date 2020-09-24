@@ -4,7 +4,7 @@ function TodoListDetail({ todoNameListDetail }) {
   return (
     <div>
       {todoNameListDetail.map((_, index) => (
-        <div key={index}>{_}</div>
+        <div key={`${index + 1}-${_}`}>{_}</div>
       ))}
     </div>
   );
