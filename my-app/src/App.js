@@ -1,6 +1,6 @@
 import React from "react";
 
-import DashBoard from "./components/DashBoard";
+import DashBoard from "./components/DashBoard.jsx";
 
 function App() {
   return <DashBoard />;

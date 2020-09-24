@@ -4,7 +4,7 @@ import TodoListDetail from "./TodoListDetail";
 import TodoTitle from "./TodoTitle";
 import InPutTodoItem from "./InputTodoItem";
 
-function Todo({ item }) {
+function Todo({ item, updateTitle, index }) {
   const [isAddTodoDetail, setIsAddTodoDetail] = useState(false);
   const [todoNameListDetail, setTodoNameListDetail] = useState([]);
 
@@ -23,7 +23,12 @@ function Todo({ item }) {
 
   return (
     <div className="todo-table">
-      <TodoTitle title={item} addTodoDetail={addTodoDetail} />
+      <TodoTitle
+        index={index}
+        title={item}
+        addTodoDetail={addTodoDetail}
+        updateTitle={updateTitle}
+      />
       <div className="body-table container-fluid">
         {isAddTodoDetail && <InPutTodoItem handleKeyDown={handleKeyDown} />}
         <TodoListDetail todoNameListDetail={todoNameListDetail} />

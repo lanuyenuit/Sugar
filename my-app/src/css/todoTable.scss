@@ -1,19 +1,26 @@
-.title-table {
+.title-table-wrap {
+  display: flex;
   background-color: #007bff;
   color: #ffffff;
-  .titleTodoName {
-    background: #007bff;
-    color: #fff;
-    border: none;
-    &:focus {
-      background-color: pink;
+  .title-table {
+    width: 85%;
+    .titleTodoName {
+      background: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      &:focus {
+        background-color: pink;
+      }
     }
   }
   .title-icon {
-    margin-left: auto;
+    margin: auto;
+    margin-right: 1rem;
+    cursor: pointer;
   }
 }
-
 .body-table {
   height: 300px;
   background-color: #fffed0;
