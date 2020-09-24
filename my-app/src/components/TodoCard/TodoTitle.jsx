@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
-function TodoTitle({ title, addTodoDetail, index, updateTitle }) {
+function TodoTitle({ title, addTodoDetail, index, updateTitle, deleteTodo }) {
   const [disableTitle, setDisableTitle] = useState(true);
   const [editTitle, setEditTitle] = useState(title);
 
@@ -13,10 +13,6 @@ function TodoTitle({ title, addTodoDetail, index, updateTitle }) {
     // setDisableTitle(true);
   };
 
-  // useEffect(() => {
-  //  onChange={(e) => setEditTitle(e.target.value)}
-  //   setDisableTitle(true);
-  // }, [disableTitle]);
   return (
     <div className="title-table-wrap">
       <div className="title-table d-flex p-2" onClick={() => editTodoName()}>
@@ -35,7 +31,7 @@ function TodoTitle({ title, addTodoDetail, index, updateTitle }) {
           onClick={() => handleUpdateTitle(index, editTitle)}
         ></i>
         <i className="fa fa-plus-circle mr-3" onClick={() => addTodoDetail()} />
-        <i className="fa fa-trash" />
+        <i className="fa fa-trash" onClick={() => deleteTodo(index)} />
       </div>
     </div>
   );

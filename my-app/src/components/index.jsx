@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import AddTodo from "./AddTodo";
 import TodoList from "./TodoList";
 
@@ -10,15 +10,28 @@ function DashBoard() {
   };
   let updateTitle = (index, todoName) => {
     let newList = [...todolist];
-    if (index && todoName != "") {
+    if (newList && index) {
       newList[index] = todoName;
       setTodoList(newList);
     }
   };
+
+  let deleteTodo = (index) => {
+    let newList = [...todolist];
+    if (newList && index) {
+      newList.splice(index, 1);
+      setTodoList(newList);
+    }
+  };
+
   return (
     <div className="container-fluid">
       <AddTodo handleAddTodo={handleAddTodo} />
-      <TodoList todolist={todolist} updateTitle={updateTitle} />
+      <TodoList
+        todolist={todolist}
+        updateTitle={updateTitle}
+        deleteTodo={deleteTodo}
+      />
     </div>
   );
 }
