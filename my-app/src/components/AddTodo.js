@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../css/addTodo.scss";
 
 function AddTodo({ handleAddTodo }) {
   const [inputTodoName, setInputTodoName] = useState("");
@@ -8,25 +9,24 @@ function AddTodo({ handleAddTodo }) {
     setInputTodoName("");
   };
   return (
-    <div>
-      <div className="row m-2">
-        <div className="col">
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Enter Todo List"
-            value={inputTodoName}
-            onChange={(e) => setInputTodoName(e.target.value)}
-          />
-        </div>
-        <div className="col">
-          <input
-            type="button"
-            className="btn btn-primary"
-            value="Create"
-            onClick={() => createTodo(inputTodoName)}
-          />
-        </div>
+    <div className="form-add-todo my-3">
+      <div className="mr-2">
+        <input
+          type="text"
+          className="form-control input-todo"
+          placeholder="Enter Todo List"
+          value={inputTodoName}
+          onChange={(e) => setInputTodoName(e.target.value)}
+        />
+      </div>
+
+      <div>
+        <button
+          className="btn btn-primary"
+          onClick={() => createTodo(inputTodoName)}
+        >
+          Create
+        </button>
       </div>
     </div>
   );
