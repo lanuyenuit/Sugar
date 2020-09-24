@@ -10,7 +10,7 @@ function DashBoard() {
   };
   let updateTitle = (index, todoName) => {
     let newList = [...todolist];
-    if (newList && index) {
+    if (newList) {
       newList[index] = todoName;
       setTodoList(newList);
     }
@@ -18,7 +18,7 @@ function DashBoard() {
 
   let deleteTodo = (index) => {
     let newList = [...todolist];
-    if (newList && index) {
+    if (newList) {
       newList.splice(index, 1);
       setTodoList(newList);
     }
