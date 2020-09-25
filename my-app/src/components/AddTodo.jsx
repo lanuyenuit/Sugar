@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import "../css/addTodo.scss";
+import { connect } from "react-redux";
+import { handleAddTodo } from "../actions";
 
-function AddTodo({ handleAddTodo }) {
+const AddTodo = ({ dispatch }) => {
   const [inputTodoName, setInputTodoName] = useState("");
 
   let createTodo = (inputTodoName) => {
-    handleAddTodo(inputTodoName);
+    dispatch(handleAddTodo(inputTodoName));
     setInputTodoName("");
   };
   return (
@@ -30,6 +32,6 @@ function AddTodo({ handleAddTodo }) {
       </div>
     </div>
   );
-}
+};
 
-export default AddTodo;
+export default connect()(AddTodo);

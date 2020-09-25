@@ -5,9 +5,9 @@ import TodoList from "./TodoList";
 function DashBoard() {
   const [todolist, setTodoList] = useState([]);
 
-  let handleAddTodo = (inputTodoName) => {
-    setTodoList([...todolist, { text: inputTodoName, isCompleted: false }]);
-  };
+  // let handleAddTodo = (inputTodoName) => {
+  //   setTodoList([...todolist, { text: inputTodoName, isCompleted: false }]);
+  // };
   let updateTitle = (index, todoName) => {
     let newList = [...todolist];
     if (newList) {
@@ -26,7 +26,7 @@ function DashBoard() {
 
   return (
     <div className="container-fluid">
-      <AddTodo handleAddTodo={handleAddTodo} />
+      <AddTodo />
       <TodoList
         todolist={todolist}
         updateTitle={updateTitle}

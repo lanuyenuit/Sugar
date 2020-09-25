@@ -25,7 +25,7 @@ function Todo({ item, updateTitle, index, deleteTodo }) {
       setIsAddTodoDetail(false);
     }
   };
-
+  console.log({ item });
   return (
     <div className="todo-table">
       <TodoTitle

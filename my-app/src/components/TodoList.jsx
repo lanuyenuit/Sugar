@@ -1,25 +1,26 @@
 import React, { useState, useEffect } from "react";
 import Todo from "./TodoCard";
+import { connect } from "react-redux";
 
-function TodoList({ todolist, updateTitle, deleteTodo }) {
-  const [renderTodoList, setRenderTodoList] = useState(todolist);
+function TodoList({ todoList }) {
+  // const [renderTodoList, setRenderTodoList] = useState(todolist);
 
-  useEffect(() => {
-    setRenderTodoList(todolist);
-  }, [todolist]);
+  // useEffect(() => {
+  //   setRenderTodoList(todolist);
+  // }, [todolist]);
 
   return (
     <div>
       <div className="row">
-        {renderTodoList &&
-          renderTodoList.map((_, index) => {
+        {todoList &&
+          todoList.map((_, index) => {
             return (
               <div key={`${index}-${_.text}`} className="col-sm-4 mb-3">
                 <Todo
                   item={_}
                   index={index}
-                  updateTitle={updateTitle}
-                  deleteTodo={deleteTodo}
+                  // updateTitle={updateTitle}
+                  // deleteTodo={deleteTodo}
                 />
               </div>
             );
@@ -29,4 +30,12 @@ function TodoList({ todolist, updateTitle, deleteTodo }) {
   );
 }
 
-export default TodoList;
+const mapStateToProps = (state) => ({
+  todoList: state,
+});
+
+// const mapDispatchToProps = (dispatch) => ({
+//   toggleTodo: (id) => dispatch(toggleTodo(id)),
+// });
+
+export default connect(mapStateToProps)(TodoList);
