@@ -14,7 +14,7 @@ function TodoList({ todolist, updateTitle, deleteTodo }) {
         {renderTodoList &&
           renderTodoList.map((_, index) => {
             return (
-              <div key={_.text} className="col-sm-4 mb-3">
+              <div key={`${index}-${_.text}`} className="col-sm-4 mb-3">
                 <Todo
                   item={_}
                   index={index}
