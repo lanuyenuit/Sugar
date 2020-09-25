@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import AddTodo from "./AddTodo";
 import TodoList from "./TodoList";
 
@@ -6,12 +6,12 @@ function DashBoard() {
   const [todolist, setTodoList] = useState([]);
 
   let handleAddTodo = (inputTodoName) => {
-    setTodoList([...todolist, inputTodoName]);
+    setTodoList([...todolist, { text: inputTodoName, isCompleted: false }]);
   };
   let updateTitle = (index, todoName) => {
     let newList = [...todolist];
     if (newList) {
-      newList[index] = todoName;
+      newList[index].text = todoName;
       setTodoList(newList);
     }
   };
