@@ -14,7 +14,7 @@ function AddTodo({ handleAddTodo }) {
         <input
           type="text"
           className="form-control input-todo"
-          placeholder="Enter Todo List"
+          placeholder="Enter Todo"
           value={inputTodoName}
           onChange={(e) => setInputTodoName(e.target.value)}
         />

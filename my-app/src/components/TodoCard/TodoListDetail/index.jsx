@@ -4,7 +4,7 @@ function TodoListDetail({ todoNameListDetail, checkCompleted }) {
   return (
     <div>
       {todoNameListDetail.map((_, index) => (
-        <div key={`${index + 1}-${_}`}>
+        <div key={`${index}-${_.text}`}>
           <TodoItem index={index} item={_} checkCompleted={checkCompleted} />
         </div>
       ))}
